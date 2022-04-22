@@ -1,30 +1,36 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
+using BackendTiki.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendTiki.Controllers
 {
-   
+    [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly Context _context;
+        private readonly ProductService _service;
         private readonly IConfiguration _configuration;
-        public ProductController(IConfiguration configuration, Context context)
+        public ProductController(IConfiguration configuration,Context context)
         {
             _configuration = configuration;
-            _context = context;
+            _service= new ProductService(configuration, context);
         }
-        [Route("products")]
+        [Route("get")]
         [HttpGet]
         public JsonResult GetProducts()
         {
-            List<Product> products = _context.Products.ToList();
-            if(products.Count == 0)
-                return new JsonResult(new {success="fails"
-                });
-            return new JsonResult(products);
+            List<Product> products = _service.GetProducts();
+            return products.Count == 0? new JsonResult(new {success="fails"}): new JsonResult(products);
         }
+        [Route("get/{id}")]
+        [HttpGet]
+        public JsonResult GetById(string id)
+        {
+            Product product = _service.GetById(id);
+            return product==null ? new JsonResult(new { success = "fails" }) : new JsonResult(product);
+        }
+     
     }
 }

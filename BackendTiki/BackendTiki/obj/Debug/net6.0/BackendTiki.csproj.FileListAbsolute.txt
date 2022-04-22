@@ -131,3 +131,5 @@ C:\Users\BUIQUOCHUY\Desktop\ASP.NET\TheMercenary\BackendTiki\BackendTiki\bin\Deb
 C:\Users\BUIQUOCHUY\Desktop\ASP.NET\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\BUIQUOCHUY\Desktop\ASP.NET\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\BUIQUOCHUY\Desktop\ASP.NET\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\BUIQUOCHUY\Desktop\ASP.NET\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\ASPSMS.dll
+C:\Users\BUIQUOCHUY\Desktop\ASP.NET\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\Twilio.dll
