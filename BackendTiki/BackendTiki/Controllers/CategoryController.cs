@@ -19,10 +19,10 @@ namespace BackendTiki.Controllers
         }
         [Route("categories")]
         [HttpGet]
-        public JsonResult GetCategorys()
+        public IActionResult GetCategorys()
         {
             List<Category> categories = _service.GetCategories();
-            return categories.Count == 0 ? new JsonResult(new
+            return categories.Count == 0 ? BadRequest(new
             {
                 success = "false",
                 message = "Not Found"
@@ -34,10 +34,10 @@ namespace BackendTiki.Controllers
         }
         [Route("get/{id}")]
         [HttpGet]
-        public JsonResult GetById(string id)
+        public IActionResult GetById(string id)
         {
             Category category = _service.GetById(id);
-            return category == null ? new JsonResult(new
+            return category == null ? BadRequest(new
             {
                 success = "false",
                 message = "Not Found"

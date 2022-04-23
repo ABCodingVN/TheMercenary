@@ -20,7 +20,7 @@ namespace BackendTiki.Services
 
         public Product GetById(string id)
         {
-            return _context.Products.Single(e => e.ProductId == id);
+            return _context.Products.SingleOrDefault(e => e.ProductId == id);
         }
     }
 }

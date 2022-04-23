@@ -19,7 +19,7 @@ namespace BackendTiki.Services
         }
         public Voucher GetById(string id)
         {
-            return _context.Vouchers.Single(e => e.VoucherId == id);
+            return _context.Vouchers.SingleOrDefault(e => e.VoucherId == id);
         }
     }
 }

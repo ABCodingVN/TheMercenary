@@ -18,16 +18,16 @@ namespace BackendTiki.Controllers
         }
         [Route("sendOpt/{phone}")]
         [HttpGet]
-        public JsonResult getOPT(string phone)
+        public IActionResult getOPT(string phone)
         {
 
             int OPT = _service.SendOTP(phone);
             return OPT == -1 ?
-                new JsonResult(new
-                {
-                    success = "false",
-                    message = "Can not send to mobile phone"
-                }) :
+               BadRequest(new
+               {
+                   success = "false",
+                   message = "Can not send OTP to mobile phone"
+               }) :
                 new JsonResult(new
                 {
                     success = "true",

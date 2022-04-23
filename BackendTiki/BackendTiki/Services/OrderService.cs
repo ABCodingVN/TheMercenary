@@ -19,7 +19,7 @@ namespace BackendTiki.Services
         }
         public Order GetById(string id)
         {
-            return _context.Orders.Single(e => e.Orderid == id);
+            return _context.Orders.SingleOrDefault(e => e.Orderid == id);
         }
     }
 }

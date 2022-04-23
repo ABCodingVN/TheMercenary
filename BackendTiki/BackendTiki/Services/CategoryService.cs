@@ -19,7 +19,7 @@ namespace BackendTiki.Services
         }
         public Category GetById(string id)
         {
-            return _context.Categories.Single(e => e.CategoryId == id);
+            return _context.Categories.SingleOrDefault(e => e.CategoryId == id);
         }
     }
 }

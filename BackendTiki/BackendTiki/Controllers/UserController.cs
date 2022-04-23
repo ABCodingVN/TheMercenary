@@ -20,10 +20,10 @@ namespace BackendTiki.Controllers
         }
         [Route("users")]
         [HttpGet]
-        public JsonResult GetOrders()
+        public IActionResult GetOrders()
         {
             List<User> users = _service.GetUsers();
-            return users.Count == 0 ? new JsonResult(new
+            return users.Count == 0 ? BadRequest(new
             {
                 success = "false",
                 message = "Not Found"
@@ -35,12 +35,12 @@ namespace BackendTiki.Controllers
         }
         [Route("get/{id}")]
         [HttpGet]
-        public JsonResult GetById(string id)
+        public IActionResult GetById(string id)
         {
             User user = _service.GetById(id);
-            return user == null ? new JsonResult(new
+            return user == null ? BadRequest(new
             {
-                success = "false",
+                success= "false",
                 message = "Not Found"
             }) : new JsonResult(new
             {

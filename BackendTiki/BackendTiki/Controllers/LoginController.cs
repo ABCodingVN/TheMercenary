@@ -19,12 +19,16 @@ namespace BackendTiki.Controllers
         }
         [Route("login")]
         [HttpPost]
-        public JsonResult LoginByPhoneNumber(LoginDTO account)
+        public IActionResult LoginByPhoneNumber(LoginDTO account)
         {
             string result = _service.LoginByPhoneNumber(account);
 
             return String.IsNullOrEmpty(result) ?
-                new JsonResult(new { success = "false", message = "Login faild" }) :
+                 Unauthorized(new
+                 {
+                     success = "false",
+                     message = "Unauthorized access"
+                 }) :
                 new JsonResult(new { success = "true", token = result });
         }
     }

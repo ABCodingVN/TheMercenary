@@ -20,7 +20,7 @@ namespace BackendTiki.Services
 
         public User GetById(string id)
         {
-            return _context.Users.Single(e => e.UserId == id);
+            return _context.Users.SingleOrDefault(e => e.UserId == id);
         }
     }
 }
