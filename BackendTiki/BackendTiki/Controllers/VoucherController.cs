@@ -22,14 +22,30 @@ namespace BackendTiki.Controllers
         public JsonResult GetOrders()
         {
             List<Voucher> vouchers = _service.GetVouchers();
-            return vouchers.Count == 0 ? new JsonResult(new { success = "fails" }) : new JsonResult(vouchers);
+            return vouchers.Count == 0 ? new JsonResult(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                vouchers
+            });
         }
         [Route("get/{id}")]
         [HttpGet]
         public JsonResult GetById(string id)
         {
             Voucher voucher = _service.GetById(id);
-            return voucher == null ? new JsonResult(new { success = "fails" }) : new JsonResult(voucher);
+            return voucher == null ? new JsonResult(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                voucher
+            });
         }
     }
 }

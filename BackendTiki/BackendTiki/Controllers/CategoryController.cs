@@ -22,14 +22,30 @@ namespace BackendTiki.Controllers
         public JsonResult GetCategorys()
         {
             List<Category> categories = _service.GetCategories();
-            return categories.Count == 0 ? new JsonResult(new { success = "fails" }) : new JsonResult(categories);
+            return categories.Count == 0 ? new JsonResult(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                categories
+            });
         }
         [Route("get/{id}")]
         [HttpGet]
         public JsonResult GetById(string id)
         {
             Category category = _service.GetById(id);
-            return category == null ? new JsonResult(new { success = "fails" }) : new JsonResult(category);
+            return category == null ? new JsonResult(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                category
+            });
         }
 
     }

@@ -16,16 +16,29 @@ namespace BackendTiki.Controllers
             _configuration = configuration;
             _service = new OTPService(configuration, context);
         }
-        [Route("opt")]
+        [Route("sendOpt/{phone}")]
         [HttpGet]
-        public void getOPT()
+        public JsonResult getOPT(string phone)
         {
-            _service.SendOTP();
-            
+
+            int OPT = _service.SendOTP(phone);
+            return OPT == -1 ?
+                new JsonResult(new
+                {
+                    success = "false",
+                    message = "Can not send to mobile phone"
+                }) :
+                new JsonResult(new
+                {
+                    success = "true",
+                    OPTNumber = OPT
+                });
+
+
         }
         [Route("create")]
         [HttpGet]
-        public void createOPT()
+        public void createPhoneOPT()
         {
             _service.CreateOPT();
 

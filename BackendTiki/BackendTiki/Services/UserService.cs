@@ -17,7 +17,7 @@ namespace BackendTiki.Services
         {
             return _context.Users.ToList();
         }
-     
+
         public User GetById(string id)
         {
             return _context.Users.Single(e => e.UserId == id);

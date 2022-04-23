@@ -17,14 +17,14 @@ namespace BackendTiki.Services
         }
         public string LoginByPhoneNumber(LoginDTO account)
         {
-            User user = _context.Users.FirstOrDefault(u=>
-            (u.Password.Equals(account.Password)&&
-            u.PhoneNumber.Equals(account.PhoneNumber)));
-            if(user == null)
+            User user = _context.Users.FirstOrDefault(u =>
+            u.Password.Equals(account.Password) &&
+            u.PhoneNumber.Equals(account.PhoneNumber));
+            if (user == null)
             {
                 return null;
             }
-            return user.PhoneNumber+user.Gmail;
+            return user.PhoneNumber + user.Gmail;
         }
     }
 }

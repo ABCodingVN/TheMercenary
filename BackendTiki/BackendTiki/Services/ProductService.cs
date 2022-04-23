@@ -14,13 +14,13 @@ namespace BackendTiki.Services
 
         }
         public List<Product> GetProducts()
-        {  
+        {
             return _context.Products.ToList();
         }
 
         public Product GetById(string id)
         {
-           return _context.Products.Single(e=>e.ProductId == id);
+            return _context.Products.Single(e => e.ProductId == id);
         }
     }
 }
