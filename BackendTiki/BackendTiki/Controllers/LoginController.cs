@@ -24,7 +24,7 @@ namespace BackendTiki.Controllers
             string result = _service.LoginByPhoneNumber(account);
 
             return String.IsNullOrEmpty(result) ?
-                new JsonResult(new { success = "faild",message="Login failues" }) : 
+                new JsonResult(new { success = "faild",message="Login faild" }) : 
                 new JsonResult(new{ token= result });
         }
     }
