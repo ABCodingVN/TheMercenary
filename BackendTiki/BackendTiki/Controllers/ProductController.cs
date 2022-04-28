@@ -32,6 +32,17 @@ namespace BackendTiki.Controllers
                 products
             });
         }
+        [Route("get/{pageNum}/{pageSize}")]
+        [HttpGet]
+        public IActionResult GetLazyProducts(int pageNum,int pageSize)
+        {
+            var result= _service.GetLazyProducts(pageNum,pageSize);
+            return result == null ? BadRequest(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : result;
+        }
         [Route("get/{id}")]
         [HttpGet]
         public IActionResult GetById(string id)
