@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "nnxHQcTlaxIx8CeSfuzuRYq4dr0dH86CBN4PpW0ECYY=",
+  "Source": "BackendTiki",
+  "BasePath": "_content/BackendTiki",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

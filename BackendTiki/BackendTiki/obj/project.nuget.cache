@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bIalA3USsC85+h1f80YWCax/IzFZOhD7ULbXqLSs/LNhWzGJ+yhT5wpSel90SE52tnmse51gXaUaqI8RF7JImw==",
+  "dgSpecHash": "Gx0Fp4eyR0p/OH9jOzfVTTcvI5hPP+WHs01hLCraceh88tWccB5qUsnDBYvrRE85W42SrbADkP4RRHJEoSJxoA==",
   "success": true,
   "projectFilePath": "C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",

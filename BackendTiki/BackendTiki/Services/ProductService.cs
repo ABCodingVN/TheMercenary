@@ -1,5 +1,6 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BackendTiki.Services
 {
@@ -16,6 +17,23 @@ namespace BackendTiki.Services
         public List<Product> GetProducts()
         {
             return _context.Products.ToList();
+        }
+        public JsonResult GetLazyProducts(int pageNum, int pageSize)
+        {
+            var total = _context.Products.Count();
+            var skip = pageSize * (pageNum - 1);
+            var canPage = skip < total;
+
+            if (!canPage)
+                return null;
+            List<Product> products = _context.Products.Skip(skip).Take(pageSize).ToList();
+
+            return new JsonResult(new
+            {
+                success = true,
+                products,
+                pageTotal = total
+            });
         }
 
         public Product GetById(string id)
