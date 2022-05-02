@@ -18,6 +18,7 @@ builder.Services.AddControllersWithViews()
                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
                .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
                = new DefaultContractResolver());
+builder.Services.AddCors();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,7 +28,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection(); 
+app.UseCors(options => options
+              .WithOrigins(new[] { "http://localhost:3000", "http://localhost:3001" })
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials()
+          );
 
 app.UseAuthorization();
 

@@ -1,10 +1,5 @@
 ﻿CREATE DATABASE TIKIAPP
 USE TIKIAPP
-drop table Categories
-drop table Products
-drop table Users
-drop table Vouchers
-drop table Orders
 
 create table Categories(
 CategoryId nvarchar(100) primary key,
