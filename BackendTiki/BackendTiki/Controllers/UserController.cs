@@ -48,10 +48,6 @@ namespace BackendTiki.Controllers
                 user
             });
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> main
         [Route("create")]
         [HttpPost]
         public IActionResult CreateUser(User user)
@@ -67,11 +63,6 @@ namespace BackendTiki.Controllers
                 _user
             });
         }
-<<<<<<< HEAD
-=======
-=======
 
->>>>>>> main
->>>>>>> main
     }
 }
