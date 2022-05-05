@@ -22,6 +22,10 @@ namespace BackendTiki.Services
         {
             return _context.Users.SingleOrDefault(e => e.UserId == id);
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 
         public User CreateUser(User user)
         {
@@ -37,5 +41,10 @@ namespace BackendTiki.Services
             }
             return null;
         }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> main
+>>>>>>> main
     }
 }
