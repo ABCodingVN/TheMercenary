@@ -36,11 +36,15 @@ namespace BackendTiki.Services
 
             Random random = new Random();
             int OTPNumber = random.Next(100000, 999999);
+<<<<<<< HEAD
+          
+=======
             var message = MessageResource.Create(
                 body: "Tiki - Mã OPT của bạn là "+ OTPNumber,
                 from: new Twilio.Types.PhoneNumber("+18648033661"),
                 to: new Twilio.Types.PhoneNumber(phone)
             );
+>>>>>>> main
             return OTPNumber;
         }
      

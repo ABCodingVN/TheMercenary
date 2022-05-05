@@ -1,10 +1,13 @@
 ﻿CREATE DATABASE TIKIAPP
 USE TIKIAPP
+<<<<<<< HEAD
+=======
 drop table Categories
 drop table Products
 drop table Users
 drop table Vouchers
 drop table Orders
+>>>>>>> main
 
 create table Categories(
 CategoryId nvarchar(100) primary key,

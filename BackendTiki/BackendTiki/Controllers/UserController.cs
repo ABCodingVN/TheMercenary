@@ -48,6 +48,24 @@ namespace BackendTiki.Controllers
                 user
             });
         }
+<<<<<<< HEAD
+        [Route("create")]
+        [HttpPost]
+        public IActionResult CreateUser(User user)
+        {
+            User _user = _service.CreateUser(user);
+            return _user == null? BadRequest(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                _user
+            });
+        }
+=======
 
+>>>>>>> main
     }
 }
