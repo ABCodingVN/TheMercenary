@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD:BackendTiki/BackendTiki/BackendTiki/obj/project.nuget.cache
   "dgSpecHash": "nmDFyTvQWVl2NQ6moDsWso2YOrMUNIN5wFrhY2JDP4l8KG0akDF++fiDxn5QHn+aN0Brb6Rt9mOjE4HEtoz2rg==",
+=======
+  "dgSpecHash": "VdkP1ldGnsmjSntN3lz9r8NqetF5iqL+mrgq4d/+V6OLGNPRwi3MqkUz6HBrbqQ5l4g/nD5YNbR1PKy4DtbCHg==",
+>>>>>>> main:BackendTiki/BackendTiki/obj/project.nuget.cache
   "success": true,
   "projectFilePath": "C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
   "expectedPackageFiles": [
@@ -139,6 +143,12 @@
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\twilio\\5.74.0\\twilio.5.74.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1603",
       "level": "Warning",
