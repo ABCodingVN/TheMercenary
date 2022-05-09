@@ -78,13 +78,10 @@
               "target": "Package",
               "version": "[4.8.3, )"
             },
-<<<<<<< HEAD
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.17.0, )"
             },
-=======
->>>>>>> main
             "Twilio": {
               "target": "Package",
               "version": "[5.74.0, )"

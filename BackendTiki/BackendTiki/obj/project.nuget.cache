@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "VdkP1ldGnsmjSntN3lz9r8NqetF5iqL+mrgq4d/+V6OLGNPRwi3MqkUz6HBrbqQ5l4g/nD5YNbR1PKy4DtbCHg==",
-=======
-  "dgSpecHash": "Gx0Fp4eyR0p/OH9jOzfVTTcvI5hPP+WHs01hLCraceh88tWccB5qUsnDBYvrRE85W42SrbADkP4RRHJEoSJxoA==",
->>>>>>> main
   "success": true,
   "projectFilePath": "C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
   "expectedPackageFiles": [
@@ -90,11 +86,7 @@
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.globalization.extensions\\4.3.0\\system.globalization.extensions.4.3.0.nupkg.sha512",
-<<<<<<< HEAD
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.17.0\\system.identitymodel.tokens.jwt.6.17.0.nupkg.sha512",
-=======
-    "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
->>>>>>> main
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.io.compression\\4.1.0\\system.io.compression.4.1.0.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\system.io.compression.zipfile\\4.0.1\\system.io.compression.zipfile.4.0.1.nupkg.sha512",
@@ -147,6 +139,12 @@
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\twilio\\5.74.0\\twilio.5.74.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1603",
       "level": "Warning",
