@@ -1,4 +1,5 @@
 ﻿using BackendTiki.Access;
+using BackendTiki.Dto;
 using BackendTiki.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,6 +40,12 @@ namespace BackendTiki.Services
         public Product GetById(string id)
         {
             return _context.Products.SingleOrDefault(e => e.ProductId == id);
+        }
+
+        public List<Product> GetBySearch(SearchProducts search)
+        {
+            List<Product> products = _context.Products.Select(e=>e).Where(e=>e.Name.Contains(search.InputSearch)).ToList();
+            return products;
         }
     }
 }

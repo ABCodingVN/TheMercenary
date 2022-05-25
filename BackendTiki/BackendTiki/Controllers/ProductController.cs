@@ -1,5 +1,6 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
+using BackendTiki.Dto;
 using BackendTiki.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ namespace BackendTiki.Controllers
             _configuration = configuration;
             _service = new ProductService(configuration, context);
         }
-        [Route("get")]
+        [Route("all")]
         [HttpGet]
         public IActionResult GetProducts()
         {
@@ -56,6 +57,21 @@ namespace BackendTiki.Controllers
             {
                 success = "true",
                 product
+            });
+        }
+        [Route("search")]
+        [HttpPost]
+        public IActionResult SearchProducr(SearchProducts search)
+        {
+            List<Product> products = _service.GetBySearch(search);
+            return products.Count==0 ? BadRequest(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                products
             });
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VdkP1ldGnsmjSntN3lz9r8NqetF5iqL+mrgq4d/+V6OLGNPRwi3MqkUz6HBrbqQ5l4g/nD5YNbR1PKy4DtbCHg==",
+  "dgSpecHash": "gIUK5MOpY1asyy23jZ1SogayfS6WzpBBiHX6U5ZtyokJKzFC62pVSQLYVM1fs/G4cqRUc0KCCg3lL3/ySDmokA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
+  "projectFilePath": "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\aspsms\\0.0.2\\aspsms.0.0.2.nupkg.sha512",
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -139,12 +139,6 @@
     "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\twilio\\5.74.0\\twilio.5.74.0.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1603",
       "level": "Warning",

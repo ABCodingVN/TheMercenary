@@ -6988,11 +6988,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
+      "projectUniqueName": "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
       "projectName": "BackendTiki",
-      "projectPath": "C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
+      "projectPath": "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
       "packagesPath": "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\",
+      "outputPath": "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\BUIQUOCHUY\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7086,17 +7086,11 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\BUIQUOCHUY\\Desktop\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1603",
       "level": "Warning",
