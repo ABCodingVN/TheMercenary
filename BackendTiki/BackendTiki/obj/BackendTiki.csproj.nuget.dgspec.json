@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj": {}
+    "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj": {
+    "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
+        "projectUniqueName": "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
         "projectName": "BackendTiki",
-        "projectPath": "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
-        "packagesPath": "C:\\Users\\BUIQUOCHUY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BUIQUOCHUY\\Desktop\\CODE-LIFE\\ASP.NET\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\",
+        "projectPath": "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
+        "packagesPath": "C:\\Users\\19521\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\BUIQUOCHUY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\19521\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -105,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

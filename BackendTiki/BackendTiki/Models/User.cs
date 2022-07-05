@@ -1,4 +1,4 @@
-﻿namespace BackendTiki.Models
+﻿    namespace BackendTiki.Models
 {
     public class User
     {
