@@ -6,6 +6,7 @@
         private string productId;
         private string userId;
         private string voucherId;
+        private string supplierId;
         private int quantity;
         private Double totalPayment;
         private Double discountMoney;

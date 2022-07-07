@@ -2,6 +2,7 @@
 using BackendTiki.Dto;
 using BackendTiki.Models;
 using Microsoft.AspNetCore.Mvc;
+using BackendTiki.Access.StaticFunction;
 
 namespace BackendTiki.Services
 {
@@ -16,8 +17,15 @@ namespace BackendTiki.Services
 
         }
         public List<Product> GetProducts()
-        {
-            return _context.Products.ToList();
+        {  List<Product> products = _context.Products.ToList();
+            if (products.Count > 2)
+            {
+                int left = 0;
+                int right = products.Count - 1;
+                Sort.quickSort(products, products[left], products[right], left, right);
+            }
+           
+            return products;
         }
         public JsonResult GetLazyProducts(int pageNum, int pageSize)
         {
@@ -46,6 +54,33 @@ namespace BackendTiki.Services
         {
             List<Product> products = _context.Products.Select(e=>e).Where(e=>e.Name.Contains(search.InputSearch)).ToList();
             return products;
+        }
+
+        public Object GetDetailById(string id)
+        {
+            try
+            {
+                Product product = _context.Products.SingleOrDefault(e => e.ProductId == id);
+                if (product != null)
+                {
+                    Supplier supplier = _context.Suppliers.SingleOrDefault(e => e.SupplierId == product.SupplierId);
+                    Ratting ratting = _context.Rattings.SingleOrDefault(e => e.RatingId == product.RattingId);
+
+                    return new
+                    {
+                        product,
+                        supplier,
+                        ratting
+                    };
+                }
+                return null;
+
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+          
         }
     }
 }

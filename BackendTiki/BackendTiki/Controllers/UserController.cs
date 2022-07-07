@@ -56,7 +56,7 @@ namespace BackendTiki.Controllers
             return _user == null? BadRequest(new
             {
                 success = "false",
-                message = "Not Found"
+                message = "Register fail"
             }) : new JsonResult(new
             {
                 success = "true",

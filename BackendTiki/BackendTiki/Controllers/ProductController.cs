@@ -59,16 +59,32 @@ namespace BackendTiki.Controllers
                 product
             });
         }
+        [Route("detail/{id}")]
+        [HttpGet]
+        public IActionResult GetDetailById(string id)
+        {
+            Object detail = _service.GetDetailById(id);
+           /* return detail == null ? BadRequest(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                detail
+            });*/
+           return new JsonResult(new
+           {
+               success = "true",
+               detail
+           }); 
+        }
         [Route("search")]
         [HttpPost]
         public IActionResult SearchProducr(SearchProducts search)
         {
             List<Product> products = _service.GetBySearch(search);
-            return products.Count==0 ? BadRequest(new
-            {
-                success = "false",
-                message = "Not Found"
-            }) : new JsonResult(new
+            return  new JsonResult(new
             {
                 success = "true",
                 products

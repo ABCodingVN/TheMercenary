@@ -18,7 +18,10 @@ namespace BackendTiki.Access
         public DbSet<User> Users { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<ProductDetail> ProductDetails { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Ratting> Rattings { get; set; }
+        public DbSet<ReplyRatting> ReplyRattings { get; set; }
+
     }
 
 }
