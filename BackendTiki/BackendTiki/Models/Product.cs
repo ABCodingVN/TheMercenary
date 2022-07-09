@@ -4,7 +4,6 @@
     {
         private string productId;
         private string supplierId;
-        private string rattingId;
         private string categoryId;
         private string name;
         private string imageURL;
@@ -19,6 +18,7 @@
         private DateTime expiryDate;
 
         public string ProductId { get => productId; set => productId = value; }
+        public string SupplierId { get => supplierId; set => supplierId = value; }
         public string CategoryId { get => categoryId; set => categoryId = value; }
         public string Name { get => name; set => name = value; }
         public string ImageURL { get => imageURL; set => imageURL = value; }
@@ -31,8 +31,16 @@
         public string OriginBrand { get => originBrand; set => originBrand = value; }
         public string LocalBrand { get => localBrand; set => localBrand = value; }
         public DateTime ExpiryDate { get => expiryDate; set => expiryDate = value; }
-        public string SupplierId { get => supplierId; set => supplierId = value; }
-        public string RattingId { get => rattingId; set => rattingId = value; }
+
+
+        /*  private Category category;
+private Supplier supplier;
+private Ratting ratting;*/
+
+
+        /*        public Category Category { get => category; set => category = value; }
+                public Supplier Supplier { get => supplier; set => supplier = value; }
+                public Ratting Ratting { get => ratting; set => ratting = value; }*/
     }
     
 }

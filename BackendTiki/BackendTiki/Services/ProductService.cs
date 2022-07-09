@@ -24,7 +24,6 @@ namespace BackendTiki.Services
                 int right = products.Count - 1;
                 Sort.quickSort(products, products[left], products[right], left, right);
             }
-           
             return products;
         }
         public JsonResult GetLazyProducts(int pageNum, int pageSize)
@@ -64,7 +63,7 @@ namespace BackendTiki.Services
                 if (product != null)
                 {
                     Supplier supplier = _context.Suppliers.SingleOrDefault(e => e.SupplierId == product.SupplierId);
-                    Ratting ratting = _context.Rattings.SingleOrDefault(e => e.RatingId == product.RattingId);
+                    Ratting ratting = _context.Rattings.SingleOrDefault(e => e.ProductId == product.ProductId);
 
                     return new
                     {
