@@ -1,5 +1,0 @@
-export { default as Header } from './Header'
-export { default as Banner } from './Banner'
-export { default as CategoryItems } from './CategoryItems'
-export { default as ListProduct } from './ListProduct'
-export { default as Footer } from './Footer'
