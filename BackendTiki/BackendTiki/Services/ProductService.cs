@@ -18,12 +18,6 @@ namespace BackendTiki.Services
         }
         public List<Product> GetProducts()
         {  List<Product> products = _context.Products.ToList();
-            if (products.Count > 2)
-            {
-                int left = 0;
-                int right = products.Count - 1;
-                Sort.quickSort(products, products[left], products[right], left, right);
-            }
             return products;
         }
         public JsonResult GetLazyProducts(int pageNum, int pageSize)
@@ -35,6 +29,7 @@ namespace BackendTiki.Services
             if (!canPage)
                 return null;
             List<Product> products = _context.Products.Skip(skip).Take(pageSize).ToList();
+     
 
             return new JsonResult(new
             {
