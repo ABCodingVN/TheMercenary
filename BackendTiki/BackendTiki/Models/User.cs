@@ -10,7 +10,9 @@
         private string phoneNumber;
         private string address;
         private string gmail;
-    /*    private Wards wards;*/
+
+        private Wards wards;
+        private ICollection<Order> orders;
         public string UserId { get => userId; set => userId = value; }
         public string WardsID { get => wardsID; set => wardsID = value; }
         public string Name { get => name; set => name = value; }
@@ -19,6 +21,8 @@
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Address { get => address; set => address = value; }
         public string Gmail { get => gmail; set => gmail = value; }
-/*        public Wards Wards { get => wards; set => wards = value; }*/
+
+        public Wards Wards { get => wards; set => wards = value; }
+        public ICollection<Order> Orders { get => orders; set => orders = value; }
     }
 }

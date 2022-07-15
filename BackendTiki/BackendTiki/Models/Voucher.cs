@@ -12,6 +12,8 @@
         private int quantityUsed;
         private Double percentDiscount;
         private Double maxMoney;
+        
+        private ICollection<Order> orders;
 
         public string VoucherId { get => voucherId; set => voucherId = value; }
         public string CodeVoucher { get => codeVoucher; set => codeVoucher = value; }
@@ -23,5 +25,7 @@
         public int QuantityUsed { get => quantityUsed; set => quantityUsed = value; }
         public double PercentDiscount { get => percentDiscount; set => percentDiscount = value; }
         public double MaxMoney { get => maxMoney; set => maxMoney = value; }
+
+        public ICollection<Order> Orders { get => orders; set => orders = value; }
     }
 }
