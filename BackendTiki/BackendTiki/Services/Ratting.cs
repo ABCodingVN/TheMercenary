@@ -19,7 +19,7 @@ namespace BackendTiki.Services
         }
         public Ratting GetById(string id)
         {
-            return _context.Rattings.SingleOrDefault(e => e.RatingId == id);
+            return _context.Rattings.SingleOrDefault(e => e.RattingId == id);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace BackendTiki.Models
+﻿using Newtonsoft.Json;
+
+namespace BackendTiki.Models
 {
     public class Product
     {
@@ -17,11 +19,15 @@
         private string originBrand;
         private string localBrand;
         private DateTime expiryDate;
-
+        [JsonIgnore]
         private Category category;
+        [JsonIgnore]
         private Supplier supplier;
+        [JsonIgnore]
         private ICollection<Ratting> rattings;
+        [JsonIgnore]
         private Ratting ratting;
+        [JsonIgnore]
         private ICollection<Order> orders;
 
         public string ProductId { get => productId; set => productId = value; }
@@ -39,10 +45,15 @@
         public string OriginBrand { get => originBrand; set => originBrand = value; }
         public string LocalBrand { get => localBrand; set => localBrand = value; }
         public DateTime ExpiryDate { get => expiryDate; set => expiryDate = value; }
+        [JsonIgnore]
         public Category Category { get => category; set => category = value; }
+        [JsonIgnore]
         public Supplier Supplier { get => supplier; set => supplier = value; }
+        [JsonIgnore]
         public ICollection<Ratting> Rattings { get => rattings; set => rattings = value; }
+        [JsonIgnore]
         public Ratting Ratting { get => ratting; set => ratting = value; }
+        [JsonIgnore]
         public ICollection<Order> Orders { get => orders; set => orders = value; }
     }
     

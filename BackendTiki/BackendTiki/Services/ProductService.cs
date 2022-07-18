@@ -52,8 +52,10 @@ namespace BackendTiki.Services
 
         public Object GetDetailById(string id)
         {
+
             try
             {
+
                 Product product = _context.Products.SingleOrDefault(e => e.ProductId == id);
                 if (product != null)
                 {
@@ -65,16 +67,20 @@ namespace BackendTiki.Services
                         product,
                         supplier,
                         ratting
+
                     };
                 }
                 return null;
-
             }
-            catch(Exception e)
+
+            catch (Exception e)
             {
                 return null;
             }
-          
+
+
         }
+         
+        
     }
 }

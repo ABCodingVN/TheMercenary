@@ -1,4 +1,6 @@
-﻿    namespace BackendTiki.Models
+﻿using Newtonsoft.Json;
+
+namespace BackendTiki.Models
 {
     public class User
     {
@@ -11,7 +13,9 @@
         private string address;
         private string gmail;
 
+        [JsonIgnore]
         private Wards wards;
+        [JsonIgnore]
         private ICollection<Order> orders;
         public string UserId { get => userId; set => userId = value; }
         public string WardsID { get => wardsID; set => wardsID = value; }
@@ -22,7 +26,9 @@
         public string Address { get => address; set => address = value; }
         public string Gmail { get => gmail; set => gmail = value; }
 
+        [JsonIgnore]
         public Wards Wards { get => wards; set => wards = value; }
+        [JsonIgnore]
         public ICollection<Order> Orders { get => orders; set => orders = value; }
     }
 }

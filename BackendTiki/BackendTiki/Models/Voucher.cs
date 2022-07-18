@@ -1,4 +1,6 @@
-﻿namespace BackendTiki.Models
+﻿using Newtonsoft.Json;
+
+namespace BackendTiki.Models
 {
     public class Voucher
     {
@@ -12,7 +14,8 @@
         private int quantityUsed;
         private Double percentDiscount;
         private Double maxMoney;
-        
+
+        [JsonIgnore]
         private ICollection<Order> orders;
 
         public string VoucherId { get => voucherId; set => voucherId = value; }
@@ -26,6 +29,7 @@
         public double PercentDiscount { get => percentDiscount; set => percentDiscount = value; }
         public double MaxMoney { get => maxMoney; set => maxMoney = value; }
 
+        [JsonIgnore]
         public ICollection<Order> Orders { get => orders; set => orders = value; }
     }
 }

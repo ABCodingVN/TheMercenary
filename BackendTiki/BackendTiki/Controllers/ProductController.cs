@@ -64,7 +64,7 @@ namespace BackendTiki.Controllers
         public IActionResult GetDetailById(string id)
         {
             Object detail = _service.GetDetailById(id);
-           /* return detail == null ? BadRequest(new
+            return detail == null ? BadRequest(new
             {
                 success = "false",
                 message = "Not Found"
@@ -72,12 +72,8 @@ namespace BackendTiki.Controllers
             {
                 success = "true",
                 detail
-            });*/
-           return new JsonResult(new
-           {
-               success = "true",
-               detail
-           }); 
+            });
+           
         }
         [Route("search")]
         [HttpPost]

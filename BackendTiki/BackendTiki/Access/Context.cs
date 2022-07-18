@@ -50,9 +50,9 @@ namespace BackendTiki.Access
             {
                 entity.HasNoKey();
                 entity.ToTable("Ratting")
-                    .HasKey(e => e.RatingId);
+                    .HasKey(e => e.RattingId);
 
-                entity.HasIndex(e => e.RatingId)
+                entity.HasIndex(e => e.RattingId)
 
                     .IsUnique();
 
@@ -67,11 +67,10 @@ namespace BackendTiki.Access
                   .IsUnicode(false);
 
                 entity.Property(e => e.PointStar)
-                .HasMaxLength(100)
                 .IsRequired()
                 .IsUnicode(false);
 
-                entity.Property(e => e.Decribe)
+                entity.Property(e => e.Describe)
                  .HasMaxLength(100)
                  .IsUnicode(false);
                 entity.Property(e => e.ImageURL)

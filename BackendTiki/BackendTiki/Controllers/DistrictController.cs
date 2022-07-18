@@ -21,7 +21,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetOrders()
         {
-            List<Voucher> Districts = _service.GetDistricts();
+            List<District> Districts = _service.GetDistricts();
             return Districts.Count == 0 ? BadRequest(new
             {
                 success = "false",
