@@ -39,7 +39,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)
                     .IsRequired()
-                    .IsUnicode(false);
+                    .IsUnicode(true);
                 entity.HasMany(p => p.Products)
                .WithOne(d => d.Category)
                .HasForeignKey(d => d.CategoryId)
@@ -72,7 +72,7 @@ namespace BackendTiki.Access
 
                 entity.Property(e => e.Describe)
                  .HasMaxLength(100)
-                 .IsUnicode(false);
+                 .IsUnicode(true);
                 entity.Property(e => e.ImageURL)
                  .HasMaxLength(100)
                  .IsUnicode(false);
@@ -102,7 +102,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.NameDistrict)
                     .HasMaxLength(100)
                     .IsRequired()
-                    .IsUnicode(false);
+                     .IsUnicode(true);
                 entity.HasMany(p => p.Wards)
                   .WithOne(d => d.District)
                   .HasForeignKey(d => d.DistrictId)
@@ -188,7 +188,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.Name)
                   .HasMaxLength(100)
                   .IsRequired()
-                  .IsUnicode(false);
+                  .IsUnicode(true);
                 entity.Property(e => e.ImageURL)
                 .HasMaxLength(200)
                 .IsRequired()
@@ -199,7 +199,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.Description)
                 .HasMaxLength(3000)
                 .IsRequired()
-                .IsUnicode(false);
+                 .IsUnicode(true);
                 entity.Property(e => e.Quantity)
                 .IsRequired()
                 .IsUnicode(false);
@@ -219,11 +219,11 @@ namespace BackendTiki.Access
                  .IsUnicode(false);
                 entity.Property(e => e.OriginBrand)
                  .HasMaxLength(100)
-                 .IsUnicode(false);
+                 .IsUnicode(true);
 
                 entity.Property(e => e.LocalBrand)
                   .HasMaxLength(100)
-                  .IsUnicode(false);
+                   .IsUnicode(true);
                 entity.Property(e => e.ExpiryDate)
                  .IsUnicode(false);
 
@@ -260,7 +260,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.NameProvince)
                     .HasMaxLength(100)
                     .IsRequired()
-                    .IsUnicode(false);
+                   .IsUnicode(true);
                 entity.HasMany(p => p.Districts)
                   .WithOne(d => d.Province)
                   .HasForeignKey(d => d.ProvinceId)
@@ -288,7 +288,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.Decribe)
                   .HasMaxLength(100)
                   .IsRequired()
-                  .IsUnicode(false);
+                 .IsUnicode(true);
 
                 entity.Property(e => e.Time)
                 .IsRequired()
@@ -317,7 +317,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.NameShop)
                     .HasMaxLength(100)
                     .IsRequired()
-                    .IsUnicode(false);
+              .IsUnicode(true);
 
                 entity.Property(e => e.QuantityFollower)
                  .IsRequired()
@@ -326,7 +326,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.AddressShop)
                   .HasMaxLength(100)
                   .IsRequired()
-                  .IsUnicode(false);
+                  .IsUnicode(true);
 
                 entity.Property(e => e.PercentRepChat)
                 .IsRequired()
@@ -358,7 +358,7 @@ namespace BackendTiki.Access
 
                 entity.Property(e => e.Name)
                  .IsRequired()
-                 .IsUnicode(false);
+                 .IsUnicode(true);
 
                 entity.Property(e => e.Password)
                   .HasMaxLength(100)
@@ -377,7 +377,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.Address)
                   .HasMaxLength(100)
                   .IsRequired()
-                  .IsUnicode(false);
+                .IsUnicode(true);
 
                 entity.Property(e => e.Gmail)
                 .IsRequired()
@@ -406,7 +406,7 @@ namespace BackendTiki.Access
 
                 entity.Property(e => e.Name)
                     .IsRequired()
-                    .IsUnicode(false);
+                    .IsUnicode(true);
 
 
                 entity.Property(e => e.DateBegin)
@@ -455,7 +455,7 @@ namespace BackendTiki.Access
                 entity.Property(e => e.NameWards)
                     .HasMaxLength(100)
                     .IsRequired()
-                    .IsUnicode(false);
+                   .IsUnicode(true);
                 entity.HasMany(p => p.Users)
                   .WithOne(d => d.Wards)
                   .HasForeignKey(d => d.WardsID)
