@@ -1,8 +1,9 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BackendTiki.Controllers
 {
@@ -10,18 +11,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class VoucherController : ControllerBase
     {
-        private readonly VoucherService _service;
         private readonly IConfiguration _configuration;
+        private IVoucherRepository voucherRepository;
+
         public VoucherController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new VoucherService(configuration, context);
+            this._configuration = configuration;
+            this.voucherRepository = new VoucherRepository(context);
         }
+
         [Route("vouchers")]
         [HttpGet]
         public IActionResult GetOrders()
         {
-            List<Voucher> vouchers = _service.GetVouchers();
+            List<Voucher> vouchers = voucherRepository.GetVouchers();
             return vouchers.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -36,7 +39,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            Voucher voucher = _service.GetById(id);
+            Voucher voucher = voucherRepository.GetVoucherByID(id);
             return voucher == null ? BadRequest(new
             {
                 success = "false",

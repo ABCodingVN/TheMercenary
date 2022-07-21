@@ -1,7 +1,7 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendTiki.Controllers
@@ -10,18 +10,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class DistrictController : ControllerBase
     {
-        private readonly DistrictService _service;
+
         private readonly IConfiguration _configuration;
+        private IDistrictRepository districtRepository;
+
         public DistrictController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new DistrictService(configuration, context);
+            this._configuration = configuration;
+            this.districtRepository = new DistrictRepository(context);
         }
         [Route("vouchers")]
         [HttpGet]
         public IActionResult GetOrders()
         {
-            List<District> Districts = _service.GetDistricts();
+            List<District> Districts = districtRepository.GetDistricts();
             return Districts.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -36,7 +38,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            District District = _service.GetById(id);
+            District District = districtRepository.GetById(id);
             return District == null ? BadRequest(new
             {
                 success = "false",

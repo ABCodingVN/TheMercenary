@@ -1,8 +1,9 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BackendTiki.Controllers
 {
@@ -10,18 +11,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class RattingController : ControllerBase
     {
-        private readonly RattingService _service;
         private readonly IConfiguration _configuration;
+        private IRattingRepository rattingRepository;
+
         public RattingController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new RattingService(configuration, context);
+            this._configuration = configuration;
+            this.rattingRepository = new RattingRepository(context);
         }
+
         [Route("Rattings")]
         [HttpGet]
         public IActionResult GetRattings()
         {
-            List<Ratting> Rattings = _service.GetRattings();
+            List<Ratting> Rattings = rattingRepository.GetRattings();
             return Rattings.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -36,7 +39,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            Ratting Ratting = _service.GetById(id);
+            Ratting Ratting = rattingRepository.GetRattingByID(id);
             return Ratting == null ? BadRequest(new
             {
                 success = "false",

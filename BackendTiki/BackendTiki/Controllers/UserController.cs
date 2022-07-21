@@ -1,7 +1,9 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
+using Microsoft.AspNetCore.Mvc;
+
 using Microsoft.AspNetCore.Mvc;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
@@ -11,18 +13,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserService _service;
         private readonly IConfiguration _configuration;
+        private IUserRepository userRepository;
+
         public UserController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new UserService(configuration, context);
+            this._configuration = configuration;
+            this.userRepository = new UserRepository(context);
         }
+
         [Route("users")]
         [HttpGet]
         public IActionResult GetOrders()
         {
-            List<User> users = _service.GetUsers();
+            List<User> users = userRepository.GetUsers();
             return users.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -37,7 +41,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            User user = _service.GetById(id);
+            User user = userRepository.GetUserByID(id);
             return user == null ? BadRequest(new
             {
                 success= "false",
@@ -52,7 +56,7 @@ namespace BackendTiki.Controllers
         [HttpPost]
         public IActionResult CreateUser(User user)
         {
-            User _user = _service.CreateUser(user);
+            User _user = userRepository.InsertUser(user);
             return _user == null? BadRequest(new
             {
                 success = "false",

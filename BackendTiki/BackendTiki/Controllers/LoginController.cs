@@ -1,8 +1,9 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Dto;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BackendTiki.Controllers
 {
@@ -10,18 +11,21 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly LoginService _service;
         private readonly IConfiguration _configuration;
+        private ILoginRepository loginRepository;
+
         public LoginController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new LoginService(configuration, context);
+            this._configuration = configuration;
+            this.loginRepository = new LoginRepository(context);
         }
+
+
         [Route("login")]
         [HttpPost]
         public IActionResult LoginByPhoneNumber(LoginDTO account)
         {
-            string result = _service.LoginByPhoneNumber(account);
+            string result = loginRepository.LoginByPhoneNumber(account);
 
             return String.IsNullOrEmpty(result) ?
                  Unauthorized(new

@@ -1,6 +1,7 @@
 ﻿using BackendTiki.Access;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Models;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendTiki.Controllers
@@ -9,13 +10,15 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class OTPController : ControllerBase
     {
-        private readonly OTPService _service;
         private readonly IConfiguration _configuration;
+        private IUserRepository OTPRepository;
+
         public OTPController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new OTPService(configuration, context);
+            this._configuration = configuration;
+            this.OTPRepository = new UserRepository(context);
         }
+/*
         [Route("sendOpt/{phone}")]
         [HttpGet]
         public IActionResult getOPT(string phone)
@@ -42,6 +45,6 @@ namespace BackendTiki.Controllers
         {
             _service.CreateOPT();
 
-        }
+        }*/
     }
 }

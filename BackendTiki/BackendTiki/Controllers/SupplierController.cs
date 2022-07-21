@@ -1,8 +1,9 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BackendTiki.Controllers
 {
@@ -10,18 +11,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class SupplierController : ControllerBase
     {
-        private readonly SupplierService _service;
         private readonly IConfiguration _configuration;
+        private ISupplierRepository supplierRepository;
+
         public SupplierController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new SupplierService(configuration, context);
+            this._configuration = configuration;
+            this.supplierRepository = new SupplierRepository(context);
         }
+
         [Route("Suppliers")]
         [HttpGet]
         public IActionResult GetSuppliers()
         {
-            List<Supplier> Suppliers = _service.GetSuppliers();
+            List<Supplier> Suppliers = supplierRepository.GetSuppliers();
             return Suppliers.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -36,7 +39,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            Supplier Supplier = _service.GetById(id);
+            Supplier Supplier = supplierRepository.GetSupplierByID(id);
             return Supplier == null ? BadRequest(new
             {
                 success = "false",

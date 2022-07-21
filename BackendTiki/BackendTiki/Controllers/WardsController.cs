@@ -1,8 +1,9 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BackendTiki.Controllers
 {
@@ -10,18 +11,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class WardsController : ControllerBase
     {
-        private readonly WardsService _service;
         private readonly IConfiguration _configuration;
+        private IWardsRepository wardsRepository;
+
         public WardsController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new WardsService(configuration, context);
+            this._configuration = configuration;
+            this.wardsRepository = new WardsRepository(context);
         }
+
         [Route("Wardss")]
         [HttpGet]
         public IActionResult GetWards()
         {
-            List<Wards> Wardss = _service.GetWards();
+            List<Wards> Wardss = wardsRepository.GetWards();
             return Wardss.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -36,7 +39,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            Wards Wards = _service.GetById(id);
+            Wards Wards = wardsRepository.GetWardsByID(id);
             return Wards == null ? BadRequest(new
             {
                 success = "false",

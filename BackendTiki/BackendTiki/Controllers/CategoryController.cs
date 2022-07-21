@@ -1,7 +1,7 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendTiki.Controllers
@@ -10,18 +10,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly CategoryService _service;
+ 
         private readonly IConfiguration _configuration;
+        private ICategoryRepository categoryRepository;
+
         public CategoryController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new CategoryService(configuration, context);
+            this._configuration = configuration;
+            this.categoryRepository = new CategoryRepository(context);
         }
         [Route("categories")]
         [HttpGet]
         public IActionResult GetCategorys()
         {
-            List<Category> categories = _service.GetCategories();
+            List<Category> categories = categoryRepository.GetCategorys();
             return categories.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -36,7 +38,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            Category category = _service.GetById(id);
+            Category category = categoryRepository.GetCategoryByID(id);
             return category == null ? BadRequest(new
             {
                 success = "false",

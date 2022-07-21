@@ -1,8 +1,9 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
-using BackendTiki.Services;
-using Microsoft.AspNetCore.Http;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BackendTiki.Controllers
 {
@@ -10,18 +11,20 @@ namespace BackendTiki.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private readonly OrderService _service;
         private readonly IConfiguration _configuration;
+        private IOrderRepository orderRepository;
+
         public OrderController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new OrderService(configuration, context);
+            this._configuration = configuration;
+            this.orderRepository = new OrderRepository(context);
         }
+
         [Route("orders")]
         [HttpGet]
         public IActionResult GetOrders()
         {
-            List<Order> orders = _service.GetOrders();
+            List<Order> orders = orderRepository.GetOrders();
             return orders.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -36,7 +39,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            Order order = _service.GetById(id);
+            Order order = orderRepository.GetOrderByID(id);
             return order == null ? BadRequest(new
             {
                 success = "false",

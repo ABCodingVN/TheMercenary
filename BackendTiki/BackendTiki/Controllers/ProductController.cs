@@ -1,6 +1,8 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
 using BackendTiki.Dto;
+using BackendTiki.Interface;
+using BackendTiki.Repository;
 using BackendTiki.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,16 +15,18 @@ namespace BackendTiki.Controllers
     {
         private readonly ProductService _service;
         private readonly IConfiguration _configuration;
+        private IProductRepository productRepository;
+
         public ProductController(IConfiguration configuration, Context context)
         {
-            _configuration = configuration;
-            _service = new ProductService(configuration, context);
+            this._configuration = configuration;
+            this.productRepository = new ProductRepository(context);
         }
         [Route("all")]
         [HttpGet]
         public IActionResult GetProducts()
         {
-            List<Product> products = _service.GetProducts();
+            List<Product> products = productRepository.GetProducts();
             return products.Count == 0 ? BadRequest(new
             {
                 success = "false",
@@ -37,18 +41,22 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetLazyProducts(int pageNum,int pageSize)
         {
-            var result= _service.GetLazyProducts(pageNum,pageSize);
-            return result == null ? BadRequest(new
+            List<Product> result= productRepository.GetLazyProducts(pageNum,pageSize);
+            return result.Count == 0 ? BadRequest(new
             {
                 success = "false",
                 message = "Not Found"
-            }) : result;
+            }) : new JsonResult(new
+            {
+                success = "true",
+                result
+            });
         }
         [Route("get/{id}")]
         [HttpGet]
         public IActionResult GetById(string id)
         {
-            Product product = _service.GetById(id);
+            Product product = productRepository.GetProductByID(id);
             return product == null ? BadRequest(new
             {
                 success = "false",
@@ -63,7 +71,7 @@ namespace BackendTiki.Controllers
         [HttpGet]
         public IActionResult GetDetailById(string id)
         {
-            Object detail = _service.GetDetailById(id);
+            Object detail = productRepository.GetDetailProductByID(id);
             return detail == null ? BadRequest(new
             {
                 success = "false",
@@ -77,9 +85,9 @@ namespace BackendTiki.Controllers
         }
         [Route("search")]
         [HttpPost]
-        public IActionResult SearchProducr(SearchProducts search)
+        public IActionResult SearchProduct(SearchProducts search)
         {
-            List<Product> products = _service.GetBySearch(search);
+            List<Product> products = productRepository.GetBySearch(search);
             return  new JsonResult(new
             {
                 success = "true",
