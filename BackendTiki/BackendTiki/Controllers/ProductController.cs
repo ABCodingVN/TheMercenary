@@ -83,6 +83,18 @@ namespace BackendTiki.Controllers
             });
            
         }
+        [Route("getByCategory/{id}")]
+        [HttpPost]
+        public IActionResult GetByCategory(string id)
+        {
+            List<Product> products = productRepository.GetProductsByCategoryID(id);
+            return new JsonResult(new
+            {
+                success = "true",
+                products
+            });
+        }
+
         [Route("search")]
         [HttpPost]
         public IActionResult SearchProduct(SearchProducts search)

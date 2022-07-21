@@ -24,6 +24,11 @@ namespace BackendTiki.Repository
             return context.Products.ToList();
         }
 
+        public List<Product> GetProductsByCategoryID(string category)
+        {
+            List<Product> products = context.Products.Select(e=>e).Where(e => e.CategoryId == category).ToList();
+            return products;
+        }
         public Product GetProductByID(string id)
         {
             Product product = context.Products.SingleOrDefault(e => e.ProductId == id);

@@ -146,10 +146,6 @@ namespace BackendTiki.Access
 
                .IsRequired();
 
-                entity.HasOne(p => p.Users)
-                  .WithMany(d => d.Orders)
-                  .HasForeignKey(d => d.OrderId)
-                  .OnDelete(DeleteBehavior.SetNull);
 
                 entity.HasOne(p => p.Vouchers)
                  .WithMany(d => d.Orders)
@@ -383,16 +379,7 @@ namespace BackendTiki.Access
                 .IsRequired()
                 .IsUnicode(false);
 
-            
-
-                entity.HasMany(p => p.Orders)
-                  .WithOne(d => d.Users)
-                  .HasForeignKey(d => d.UserId)
-                  .OnDelete(DeleteBehavior.SetNull);
-                entity.HasOne(p => p.Wards)
-                .WithMany(d => d.Users)
-                .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.SetNull);
+           
 
             });
             modelBuilder.Entity<Voucher>(entity =>
@@ -456,10 +443,7 @@ namespace BackendTiki.Access
                     .HasMaxLength(100)
                     .IsRequired()
                    .IsUnicode(true);
-                entity.HasMany(p => p.Users)
-                  .WithOne(d => d.Wards)
-                  .HasForeignKey(d => d.WardsID)
-                  .OnDelete(DeleteBehavior.SetNull);
+             
 
                 entity.HasOne(p => p.District)
                    .WithMany(d => d.Wards)
