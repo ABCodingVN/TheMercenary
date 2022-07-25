@@ -48,7 +48,7 @@ namespace BackendTiki.Access
             });
             modelBuilder.Entity<Ratting>(entity =>
             {
-                entity.HasNoKey();
+             
                 entity.ToTable("Ratting")
                     .HasKey(e => e.RattingId);
 
@@ -340,9 +340,12 @@ namespace BackendTiki.Access
             });
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.UserId)
+                        .HasColumnName("UserId")
+                        .ValueGeneratedOnAdd();
                 entity.ToTable("Users")
                     .HasKey(e => e.UserId);
+                 
 
                 entity.HasIndex(e => e.UserId)
                     .IsUnique();
@@ -379,7 +382,10 @@ namespace BackendTiki.Access
                 .IsRequired()
                 .IsUnicode(false);
 
-           
+                entity.HasOne(p => p.Wards)
+                 .WithMany(d => d.Users)
+                 .HasForeignKey(d => d.WardsID)
+                 .OnDelete(DeleteBehavior.SetNull);
 
             });
             modelBuilder.Entity<Voucher>(entity =>
@@ -448,6 +454,12 @@ namespace BackendTiki.Access
                 entity.HasOne(p => p.District)
                    .WithMany(d => d.Wards)
                    .HasForeignKey(d => d.WardsId)
+                   .OnDelete(DeleteBehavior.SetNull);
+
+
+                entity.HasMany(p => p.Users)
+                   .WithOne(d => d.Wards)
+                   .HasForeignKey(d => d.UserId)
                    .OnDelete(DeleteBehavior.SetNull);
             });
 
