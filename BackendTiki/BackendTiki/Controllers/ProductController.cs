@@ -6,6 +6,7 @@ using BackendTiki.Repository;
 using BackendTiki.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace BackendTiki.Controllers
 {
@@ -14,19 +15,32 @@ namespace BackendTiki.Controllers
     public class ProductController : ControllerBase
     {
         private readonly ProductService _service;
-        private readonly IConfiguration _configuration;
         private IProductRepository productRepository;
 
         public ProductController(IConfiguration configuration, Context context)
         {
-            this._configuration = configuration;
-            this.productRepository = new ProductRepository(context);
+            this.productRepository = new ProductRepository(context, configuration);
         }
         [Route("all")]
         [HttpGet]
         public IActionResult GetProducts()
         {
-            List<Product> products = productRepository.GetProducts();
+            DataTable products = productRepository.GetProducts();
+            return products==null ? BadRequest(new
+            {
+                success = "false",
+                message = "Not Found"
+            }) : new JsonResult(new
+            {
+                success = "true",
+                products
+            });
+        }
+        [Route("alllinq")]
+        [HttpGet]
+        public IActionResult GetProductsByLinq()
+        {
+            List<Product> products = productRepository.GetProductsLinq();
             return products.Count == 0 ? BadRequest(new
             {
                 success = "false",

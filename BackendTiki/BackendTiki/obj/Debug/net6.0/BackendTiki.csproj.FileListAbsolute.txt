@@ -279,3 +279,11 @@ C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\obj\Debu
 C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\obj\Debug\net6.0\BackendTiki.pdb
 C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\obj\Debug\net6.0\BackendTiki.genruntimeconfig.cache
 C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\obj\Debug\net6.0\ref\BackendTiki.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\19521\OneDrive\Máy tính\TheMercenary\BackendTiki\BackendTiki\bin\Debug\net6.0\ZstdNet.dll

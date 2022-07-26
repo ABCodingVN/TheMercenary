@@ -8,18 +8,44 @@ using System.Data;
 using BackendTiki.Dto;
 using BackendTiki.Interface;
 using BackendTiki.Access;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
 namespace BackendTiki.Repository
 {
     public class ProductRepository : IProductRepository, IDisposable
     {
         private Context context;
-
-        public ProductRepository(Context context)
+        private readonly IConfiguration _configuration;
+        private readonly string sqlDataSource;
+        public ProductRepository(Context context, IConfiguration configuration)
         {
             this.context = context;
+            _configuration = configuration;
+            sqlDataSource = _configuration.GetConnectionString("sql");
         }
 
-        public List<Product> GetProducts()
+        public DataTable GetProducts()
+        {
+
+            string query = @"select * from Products";
+
+            DataTable table = new DataTable();
+            
+            using (SqlConnection conn = new SqlConnection(sqlDataSource))
+            {
+                conn.Open();
+                using SqlCommand cmd = new SqlCommand(query,conn);
+
+                SqlDataReader myreader  = cmd.ExecuteReader();
+                table.Load(myreader);
+
+                myreader.Close();
+                conn.Close();
+            }
+            return table;
+        }
+        public List<Product> GetProductsLinq()
         {
             return context.Products.ToList();
         }
