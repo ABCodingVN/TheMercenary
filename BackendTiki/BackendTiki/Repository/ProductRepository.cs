@@ -28,7 +28,7 @@ namespace BackendTiki.Repository
         public DataTable GetProducts()
         {
 
-            string query = @"select * from Products";
+            string query = @"select ProductId,Name,ImageURL,Price from Products";
 
             DataTable table = new DataTable();
             

@@ -26,15 +26,16 @@ namespace BackendTiki.Controllers
         public IActionResult GetProducts()
         {
             DataTable products = productRepository.GetProducts();
-            return products==null ? BadRequest(new
+            return products == null ? BadRequest(new
             {
                 success = "false",
                 message = "Not Found"
             }) : new JsonResult(new
             {
                 success = "true",
-                products
-            });
+                products,
+                size = products.Rows.Count
+            }); ;
         }
         [Route("allLINQ")]
         [HttpGet]
