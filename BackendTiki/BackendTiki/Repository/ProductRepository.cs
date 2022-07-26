@@ -10,7 +10,7 @@ using BackendTiki.Interface;
 using BackendTiki.Access;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-
+using Microsoft.EntityFrameworkCore;
 namespace BackendTiki.Repository
 {
     public class ProductRepository : IProductRepository, IDisposable
@@ -47,6 +47,7 @@ namespace BackendTiki.Repository
         }
         public List<Product> GetProductsLinq()
         {
+            context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             return context.Products.ToList();
         }
 

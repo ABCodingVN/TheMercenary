@@ -36,7 +36,7 @@ namespace BackendTiki.Controllers
                 products
             });
         }
-        [Route("alllinq")]
+        [Route("allLINQ")]
         [HttpGet]
         public IActionResult GetProductsByLinq()
         {
