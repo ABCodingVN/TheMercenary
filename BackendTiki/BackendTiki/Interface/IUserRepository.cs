@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BackendTiki.Models;
-
+using BackendTiki.Dto;
 namespace BackendTiki.Interface
 {
     public interface IUserRepository : IDisposable
@@ -13,7 +13,7 @@ namespace BackendTiki.Interface
 
 
 
-        public User InsertUser(User User);
+        public User InsertUser(RegisterDTO User);
 
 
         public void Save();

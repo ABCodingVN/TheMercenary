@@ -1,6 +1,7 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Dto;
 using BackendTiki.Interface;
+using BackendTiki.Models;
 using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,15 +26,15 @@ namespace BackendTiki.Controllers
         [HttpPost]
         public IActionResult LoginByPhoneNumber(LoginDTO account)
         {
-            string result = loginRepository.LoginByPhoneNumber(account);
+            User user = loginRepository.LoginByPhoneNumber(account);
 
-            return String.IsNullOrEmpty(result) ?
+            return user==null ?
                  Unauthorized(new
                  {
                      success = "false",
                      message = "Unauthorized access"
                  }) :
-                new JsonResult(new { success = "true", token = result });
+                new JsonResult(new { success = "true", token = user.UserId,name=user.Name });
         }
         
     }

@@ -1,5 +1,6 @@
 ﻿using BackendTiki.Access;
 using BackendTiki.Models;
+using BackendTiki.Dto;
 using BackendTiki.Interface;
 using BackendTiki.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -54,7 +55,7 @@ namespace BackendTiki.Controllers
         }
         [Route("create")]
         [HttpPost]
-        public IActionResult CreateUser(User user)
+        public IActionResult CreateUser(RegisterDTO user)
         {
             User _user = userRepository.InsertUser(user);
             return _user == null? BadRequest(new

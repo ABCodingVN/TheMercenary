@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using BackendTiki.Dto;
+using BackendTiki.Models;
 
 namespace BackendTiki.Interface
 {
     public interface ILoginRepository : IDisposable
     {
-        string LoginByPhoneNumber(LoginDTO account);
+        User LoginByPhoneNumber(LoginDTO account);
         void Save();
     }
     

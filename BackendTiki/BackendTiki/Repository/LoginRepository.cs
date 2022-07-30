@@ -19,7 +19,7 @@ namespace BackendTiki.Repository
         {
             this.context = context;
         }
-        public string LoginByPhoneNumber(LoginDTO account)
+        public User LoginByPhoneNumber(LoginDTO account)
         {
             User user = context.Users.FirstOrDefault(u =>
             u.Password.Equals(account.Password) &&
@@ -28,7 +28,7 @@ namespace BackendTiki.Repository
             {
                 return null;
             }
-            return user.PhoneNumber + user.Gmail;
+            return user;
         }
 
         public void Save()

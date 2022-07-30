@@ -352,34 +352,34 @@ namespace BackendTiki.Access
 
                 entity.Property(e => e.WardsID)
                     .HasMaxLength(100)
-                    .IsRequired()
+               
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name)
-                 .IsRequired()
+             
                  .IsUnicode(true);
 
                 entity.Property(e => e.Password)
                   .HasMaxLength(100)
-                  .IsRequired()
+                
                   .IsUnicode(false);
 
                 entity.Property(e => e.TypeAccount)
-                .IsRequired()
+             
                 .IsUnicode(false);
 
 
                 entity.Property(e => e.PhoneNumber)
-                 .IsRequired()
+               
                  .IsUnicode(false);
 
                 entity.Property(e => e.Address)
                   .HasMaxLength(100)
-                  .IsRequired()
+                  
                 .IsUnicode(true);
 
                 entity.Property(e => e.Gmail)
-                .IsRequired()
+                
                 .IsUnicode(false);
 
                 entity.HasOne(p => p.Wards)

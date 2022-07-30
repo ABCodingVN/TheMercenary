@@ -7245,19 +7245,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\19521\\.nuget\\packages\\": {}
+    "C:\\Users\\Hien\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
+      "projectUniqueName": "C:\\Users\\Hien\\OneDrive - Trường ĐH CNTT - University of Information Technology\\Máy tính\\TheMercenary\\Backend\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
       "projectName": "BackendTiki",
-      "projectPath": "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
-      "packagesPath": "C:\\Users\\19521\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\19521\\OneDrive\\Máy tính\\TheMercenary\\BackendTiki\\BackendTiki\\obj\\",
+      "projectPath": "C:\\Users\\Hien\\OneDrive - Trường ĐH CNTT - University of Information Technology\\Máy tính\\TheMercenary\\Backend\\BackendTiki\\BackendTiki\\BackendTiki.csproj",
+      "packagesPath": "C:\\Users\\Hien\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hien\\OneDrive - Trường ĐH CNTT - University of Information Technology\\Máy tính\\TheMercenary\\Backend\\BackendTiki\\BackendTiki\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\19521\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hien\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

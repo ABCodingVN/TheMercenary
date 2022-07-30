@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
-using BackendTiki.Models;
+using BackendTiki.Dto;
 using BackendTiki.Interface;
 using BackendTiki.Access;
 namespace BackendTiki.Repository
@@ -31,19 +31,36 @@ namespace BackendTiki.Repository
             return User;
         }
 
-        public User InsertUser(User User)
+        public User InsertUser(RegisterDTO User)
         {
-            User _user = context.Users.SingleOrDefault(e => e.PhoneNumber == User.PhoneNumber);
-            if (_user == null)
+            try
             {
-                Guid g = Guid.NewGuid();
-                User.UserId = g.ToString();
-                context.Users.Add(User);
-                if (context.SaveChanges() > 0)
-                    return User;
+                User _user = context.Users.FirstOrDefault(e => e.PhoneNumber == User.PhoneNumber);
+
+                if (_user == null)
+                {
+                    User user = new User();
+                    Guid g = Guid.NewGuid();
+                    user.UserId = g.ToString();
+                    user.Name = User.Name;
+                    user.Address = User.Address;
+                    user.PhoneNumber = User.PhoneNumber;
+                    user.Gmail = User.Gmail;
+                    user.WardsID = User.WardsID;
+                    user.Password = User.Password;
+                    context.Users.Add(user);
+                    if (context.SaveChanges() > 0)
+                        return user;
+                   
+                }
                 return null;
             }
-            return null;
+            catch
+            {
+                return null;
+            }
+           
+          
         }
    
  
