@@ -20,7 +20,7 @@ namespace BackendTiki.Controllers
             this.wardsRepository = new WardsRepository(context);
         }
 
-        [Route("Wardss")]
+        [Route("Wards")]
         [HttpGet]
         public IActionResult GetWards()
         {

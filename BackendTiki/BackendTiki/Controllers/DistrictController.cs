@@ -19,9 +19,9 @@ namespace BackendTiki.Controllers
             this._configuration = configuration;
             this.districtRepository = new DistrictRepository(context);
         }
-        [Route("vouchers")]
+        [Route("Districts")]
         [HttpGet]
-        public IActionResult GetOrders()
+        public IActionResult GetDistricts()
         {
             List<District> Districts = districtRepository.GetDistricts();
             return Districts.Count == 0 ? BadRequest(new
